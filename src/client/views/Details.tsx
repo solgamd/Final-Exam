@@ -29,7 +29,7 @@ class Details extends React.Component<DetailsProps, DetailsState> {
         try {
             let id = this.props.match.params.id;
             let book = await json(`/api/books/${id}`)
-            this.setState(book);
+            this.setState({book});
         } catch (error) {
             console.log(error);
         }

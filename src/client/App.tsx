@@ -18,14 +18,18 @@ class App extends React.Component<IAppProps, IAppState> {
             <BrowserRouter>
                 <nav>
                     <Link to="/">Books</Link>
+                    <Link to="/compose">Compose</Link>
+                    <Link to="/:id/edit">Edit</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
                 </nav>
                 <Switch>
                     <Route exact path="/" component={Books} />
-                    {/* <Route exact path="/compose" component={Compose}/>
-                <Route exact path="/:id/details" component={Details}/>
-                <Route exact path="/:id/edit" component={Edit}/>
-                <Route exact path="/login" component={Login}/>
-                <Route exact path="/register" component={Register}/> */}
+                    <Route exact path="/compose" component={Compose} />
+                    <Route exact path="/:id/details" component={Details} />
+                    <Route exact path="/:id/edit" component={Edit} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/register" component={Register} />
                 </Switch>
             </BrowserRouter>
         )

@@ -20,13 +20,14 @@ class Books extends React.Component<BooksProps, BooksState> {
     async componentDidMount() {
         try {
             let books = await json('/api/books');
-            this.setState(books);
+            this.setState({books});
         } catch (error) {
             console.log(error);
         }
     }
 
     render() {
+
         return (
             <div>
                 {this.state.books.map(book => (

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
+import { json } from '../utils/api';
 
 export interface ComposeProps extends RouteComponentProps{ }
 export interface ComposeState {
@@ -23,7 +24,8 @@ class Compose extends React.Component<ComposeProps, ComposeState> {
     async handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         try {
-            console.log(this.state)
+            let result = await json('/api/books', 'POST', this.state);
+            this.props.history.push('/');
         } catch (error) {
             console.log(error);
         }
@@ -47,7 +49,7 @@ class Compose extends React.Component<ComposeProps, ComposeState> {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ categoryid: e.target.value })} />
                 </form>
                 <button
-                onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleSubmit(e)}></button>
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => this.handleSubmit(e)}>Compose</button>
             </div>
         );
     }

@@ -25,4 +25,43 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
+
+router.post('/', async (req, res, next) => {
+    let newBook = {
+        title: req.body.title,
+        author: req.body.author,
+        price: req.body.price,
+        categoryid: req.body.categoryid
+    }
+    try {
+        await db.books.insert(newBook);
+        res.json('Posted!');
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('An error occured!');
+    }
+});
+
+router.delete('/:id', async (req, res, next) => {
+    let id = req.params.id;
+    try {
+        await db.books.remove(id);
+        res.json('Deleted!');
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('An error occured!');
+    }
+});
+
+router.put('/:id', async (req, res, next) => {
+    let id = req.params.id;
+    try {
+        let result = await db.books.edit(req.body, id);
+        res.json(result);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json('An error occured!');
+    }
+});
+
 export default router; 

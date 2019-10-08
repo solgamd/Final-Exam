@@ -1,11 +1,13 @@
 import { Router } from 'express';
+import db from '../../db';
 
 const router = Router();
 
-router.use();
-router.get('/test', async (req, res, next) => {
+
+router.get('/', async (req, res, next) => {
     try {
-        
+        let cats = await db.categories.getAll();
+        res.json(cats)
     } catch (error) {
         console.log(error);
         res.status(500).json('An error occured!');

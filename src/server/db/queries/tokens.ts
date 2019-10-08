@@ -1,10 +1,10 @@
-import {knextion as knex} from '../index';
+import { knextion as knex } from '../index';
 
-const findOne = (id: number) => knex('tokens').select().limit(1).where({id});
+const findOne = (id: number, token: string) => knex('tokens').select().where({ id, token });
 
-const insertToken = (userid: number) => knex('tokens').insert({userid});
+const insertToken = (userid: number) => knex('tokens').insert({ userid });
 
-const updateToken = (id: number, token: string) => knex('tokens').update({token}).where({id});
+const updateToken = (id: number, token: string) => knex('tokens').update({ token }).where({ id });
 
 
 export default {

@@ -1,6 +1,5 @@
 import * as passport from 'passport';
 import * as LocalStrategy from 'passport-local';
-
 import { comparePassword } from '../utils/security/password';
 import db from '../db';
 

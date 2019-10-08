@@ -8,7 +8,6 @@ import Login from './views/Login';
 import Register from './views/Register';
 
 export interface IAppProps { }
-
 export interface IAppState { }
 
 class App extends React.Component<IAppProps, IAppState> {
@@ -17,11 +16,11 @@ class App extends React.Component<IAppProps, IAppState> {
         return (
             <BrowserRouter>
                 <nav>
-                    <Link to="/">Books</Link>
-                    <Link to="/compose">Compose</Link>
-                    <Link to="/:id/edit">Edit</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link to="/" className="m-2">Books</Link>
+                    <Link to="/compose" className="m-2">Compose</Link>
+                    <Link to="/:id/edit" className="m-2">Edit</Link>
+                    <Link to="/login" className="m-2">Login</Link>
+                    <Link to="/register" className="m-2">Register</Link>
                 </nav>
                 <Switch>
                     <Route exact path="/" component={Books} />

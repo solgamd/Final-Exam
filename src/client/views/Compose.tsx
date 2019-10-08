@@ -32,7 +32,7 @@ class Compose extends React.Component<ComposeProps, ComposeState> {
     async handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         try {
-            let result = await json('/api/books', 'POST', this.state);
+            await json('/api/books', 'POST', this.state);
             this.props.history.push('/');
         } catch (error) {
             console.log(error);

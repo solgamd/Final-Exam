@@ -11,7 +11,6 @@ const remove = (id: number) => knex('books').delete().where({id});
 const edit = (obj: { title: string, author: string, price: number, categoryid: number }, id: number) => knex('books').update(obj).where({id});
 
 
-
 export default {
     getAll,
     getOne,

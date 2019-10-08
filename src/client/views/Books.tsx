@@ -29,13 +29,15 @@ class Books extends React.Component<BooksProps, BooksState> {
     render() {
 
         return (
+            
             <div>
+                <h1 className=" row justify-content-center m-3 text-warning">WELCOME TO MY UGLY P.O.S. BOOKSTORE!</h1>
                 {this.state.books.map(book => (
                     <div key={book.id}>
                         <h1>{book.title}</h1>
-                        <h2>{book.author}</h2>
-                        <h3>${book.price}</h3>
-                        <h4>{book.name}</h4>
+                        <h4>{book.author}</h4>
+                        <h5>${book.price}</h5>
+                        <h6>{book.name}</h6>
                         <Link to={`/${book.id}/details`}>Details</Link>
                         <h1>....................</h1>
                     </div>

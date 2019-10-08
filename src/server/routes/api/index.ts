@@ -3,7 +3,6 @@ import booksRouter from './books';
 import categoriesRouter from './categories';
 import passport = require('passport');
 
-
 const router = Router();
 
 router.use((req, res, next) => {
@@ -15,8 +14,6 @@ router.use((req, res, next) => {
 
 router.use('/books', booksRouter);
 router.use('/categories', categoriesRouter);
-
-
 
 
 export default router; 

@@ -3,7 +3,6 @@ import db from '../../db';
 
 const router = Router();
 
-
 router.get('/', async (req, res, next) => {
     try {
         let cats = await db.categories.getAll();

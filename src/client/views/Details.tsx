@@ -35,7 +35,6 @@ class Details extends React.Component<DetailsProps, DetailsState> {
         }
     }
 
-
     async handleDelete() {
         let id = this.props.match.params.id;
         try {
@@ -54,9 +53,9 @@ class Details extends React.Component<DetailsProps, DetailsState> {
                 <h1>....................</h1>
                 <div key={book.id}>
                         <h1>{book.title}</h1>
-                        <h2>{book.author}</h2>
-                        <h3>${book.price}</h3>
-                        <h4>{book.name}</h4>
+                        <h4>{book.author}</h4>
+                        <h5>${book.price}</h5>
+                        <h6>{book.name}</h6>
                         <Link to={`/${book.id}/edit`}><button>Edit</button></Link>
                         <button onClick={() => this.handleDelete()}>Delete</button>
                         <Link to={'/'}><button>Go Back</button></Link>

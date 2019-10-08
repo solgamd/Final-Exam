@@ -12,7 +12,6 @@ router.post('/', passport.authenticate('local'), async (req: any, res, next) => 
             role: req.user.role,
             userid: req.user.id,
         })
-        console.log(req.user); // *****
         res.json(req.user);
     } catch (error) {
         console.log(error);

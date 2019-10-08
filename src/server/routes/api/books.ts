@@ -6,13 +6,11 @@ const router = Router();
 
 const isAdmin: RequestHandler = (req: any, res, next) => {
     if (!req.user || req.user.role !== 'admin') {
-        console.log(req.user);
         return res.sendStatus(401);
     } else {
         return next();
     }
 };
-
 
 router.get('/', async (req, res, next) => {
     try {
@@ -34,7 +32,6 @@ router.get('/:id', async (req, res, next) => {
         res.status(500).json('An error occured!');
     }
 });
-
 
 router.post('/', isAdmin, async (req, res, next) => {
     let newBook = {

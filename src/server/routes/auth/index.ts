@@ -1,8 +1,8 @@
-import { Router } from 'express';
+import * as express from 'express';
 import loginRouter from './login';
 import registerRouter from './register';
 
-const router = Router();
+const router = express.Router();
 
 router.use('/login', loginRouter);
 router.use('/register', registerRouter);

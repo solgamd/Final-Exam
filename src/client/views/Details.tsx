@@ -51,6 +51,7 @@ class Details extends React.Component<DetailsProps, DetailsState> {
         return (
             <div>
                 <h1>Details</h1>
+                <h1>....................</h1>
                 <div key={book.id}>
                         <h1>{book.title}</h1>
                         <h2>{book.author}</h2>

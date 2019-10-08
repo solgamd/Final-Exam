@@ -1,12 +1,12 @@
-import { Router } from 'express';
+import * as express from 'express';
 import db from '../../db';
 import { hashPassword } from '../../utils/security/password';
 import { CreateToken } from '../../utils/security/tokens';
 
 
-const router = Router();
+const router = express.Router();
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req: any, res, next) => {
     try {
         let user = { ...req.body };
         user.password = hashPassword(req.body.password);

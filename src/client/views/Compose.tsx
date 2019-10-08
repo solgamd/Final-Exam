@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { json } from '../utils/api';
+import { json, User } from '../utils/api';
 
 export interface ComposeProps extends RouteComponentProps{ }
 export interface ComposeState {
@@ -18,6 +18,14 @@ class Compose extends React.Component<ComposeProps, ComposeState> {
            author: '',
            price: '',
            categoryid: ''
+        }
+    }
+
+    componentDidMount() {
+        if (User && User.role === 'admin') {
+            return;
+        } else {
+            this.props.history.push('/login');
         }
     }
 

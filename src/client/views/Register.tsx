@@ -23,7 +23,7 @@ class Register extends React.Component<RegisterProps, RegisterState> {
     async handleRegister(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         try {
-            let result = await json(`/auth/login`, 'POST', this.state);
+            let result = await json(`/auth/register`, 'POST', this.state);
             SetAccessToken(result.token, { userid: result.userid, role: result.role });
             this.props.history.push('/');
         } catch (error) {

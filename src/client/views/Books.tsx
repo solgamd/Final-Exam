@@ -37,6 +37,7 @@ class Books extends React.Component<BooksProps, BooksState> {
                         <h3>${book.price}</h3>
                         <h4>{book.name}</h4>
                         <Link to={`/${book.id}/details`}>Details</Link>
+                        <h1>....................</h1>
                     </div>
 
                 ))}

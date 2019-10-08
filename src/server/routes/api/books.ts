@@ -36,7 +36,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 
-router.post('/', async (req, res, next) => {
+router.post('/', isAdmin, async (req, res, next) => {
     let newBook = {
         title: req.body.title,
         author: req.body.author,
@@ -52,7 +52,7 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', isAdmin, async (req, res, next) => {
     let id = req.params.id;
     try {
         await db.books.remove(id);
@@ -63,7 +63,7 @@ router.delete('/:id', async (req, res, next) => {
     }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', isAdmin, async (req, res, next) => {
     let id = req.params.id;
     try {
         let result = await db.books.edit(req.body, id);

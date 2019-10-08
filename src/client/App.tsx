@@ -18,7 +18,7 @@ class App extends React.Component<IAppProps, IAppState> {
                 <nav>
                     <Link to="/" className="m-2">Books</Link>
                     <Link to="/compose" className="m-2">Compose</Link>
-                    <Link to="/:id/edit" className="m-2">Edit</Link>
+                    {/* <Link to="/:id/edit" className="m-2">Edit</Link> */}
                     <Link to="/login" className="m-2">Login</Link>
                     <Link to="/register" className="m-2">Register</Link>
                 </nav>

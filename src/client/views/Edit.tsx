@@ -45,10 +45,10 @@ class Edit extends React.Component<EditProps, EditState> {
         let id = this.props.match.params.id;
         try {
             await json(`/api/books/${id}`, 'PUT', this.state);
+            this.props.history.push('/');
         } catch (error) {
             console.log(error);
         }
-        this.props.history.push('/');
     }
 
     render() {

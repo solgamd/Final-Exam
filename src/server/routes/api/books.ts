@@ -14,7 +14,7 @@ const isAdmin: RequestHandler = (req: any, res, next) => {
 };
 
 
-router.get('/', isAdmin, async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         let books = await db.books.getAll();
         res.json(books);

@@ -1,5 +1,5 @@
 
-declare interface IBook {
+export interface IBook {
     id: number,
     categoryid: number,
     title: string,
@@ -9,7 +9,7 @@ declare interface IBook {
     name: string
 }
 
-declare interface ICat {
+export interface ICat {
     id: number,
     name: string,
 }

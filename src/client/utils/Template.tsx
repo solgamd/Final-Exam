@@ -1,13 +1,16 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
 
-interface TemplateProps { }
-interface TemplateState { }
+export interface TemplateProps extends RouteComponentProps{ }
+export interface TemplateState {
+    
+ }
 
 class Template extends React.Component<TemplateProps, TemplateState> {
     constructor(props: TemplateProps) {
         super(props);
         this.state = {
-
+           
         }
     }
 

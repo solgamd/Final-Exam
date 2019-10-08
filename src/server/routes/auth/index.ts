@@ -1,15 +1,12 @@
 import { Router } from 'express';
+import loginRouter from './login';
+import registerRouter from './register';
 
 const router = Router();
 
-router.use();
-router.get('/test', async (req, res, next) => {
-    try {
-        
-    } catch (error) {
-        console.log(error);
-        res.status(500).json('An error occured!');
-    }
-});
+router.use('/login', loginRouter);
+router.use('/register', registerRouter);
+
+
 
 export default router; 
